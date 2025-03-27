@@ -9,6 +9,7 @@ import { Country } from "src/app/common/country";
 import { State } from "src/app/common/state";
 import { ThevortexFormService } from "src/app/services/vortex-shop-form.service";
 import { VortextValidators } from "src/app/validators/vortext-validators";
+import { CartService } from "src/app/services/cart.service"; // Import CartService
 
 @Component({
   selector: "app-checkout",
@@ -27,10 +28,13 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private thevortexFormService: ThevortexFormService
+    private thevortexFormService: ThevortexFormService,
+    private cartService: CartService // Inject CartService
   ) {}
 
   ngOnInit(): void {
+    this.reviewCartInfos();
+
     this.checkoutFormGroup = this.formBuilder.group({
       customer: this.formBuilder.group({
         firstName: new FormControl("", [
@@ -128,6 +132,16 @@ export class CheckoutComponent implements OnInit {
     //   }
     // )
   }
+  private reviewCartInfos() {
+    this.cartService.totalPrice.subscribe((data) => {
+      this.totalPrice = data;
+    });
+
+    this.cartService.totalQuantity.subscribe((data) => {
+      this.totalQuantity = data;
+    });
+  }
+
   get firstName() {
     return this.checkoutFormGroup.get("customer.firstName");
   }
