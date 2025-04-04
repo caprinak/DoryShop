@@ -1,13 +1,13 @@
 import { TestBed } from "@angular/core/testing";
 
-import { ThevortexFormService } from "./vortex-shop-form.service";
+import { DoryFormService } from "./dory-shop-form.service";
 
-describe("ThevortexFormService", () => {
-  let service: ThevortexFormService;
+describe("DoryFormService", () => {
+  let service: DoryFormService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ThevortexFormService);
+    service = TestBed.inject(DoryFormService);
   });
 
   it("should be created", () => {

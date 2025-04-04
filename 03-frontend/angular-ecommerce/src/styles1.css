@@ -106,12 +106,12 @@ a,a:hover{
 
 .page-wrapper{
     overflow:hidden;
-    background:#e5e5e5;
+    background:#D1F8EF;
     padding-bottom:8vh
 }
 
 .page-container{
-    background:#e5e5e5;
+    background:#D1F8EF;
     padding-left:200px
 }
 
@@ -124,7 +124,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
     background:0 0;
     z-index:99999999;
     height:75px;
-    box-shadow:-2px 0 4px #0000003b
+    box-shadow:-2px 0 4px #D1F8EF
 }
 
 /* 
@@ -134,7 +134,7 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
  */
 
 .header-desktop{
-    background:#0da8e4;
+    background:#3674B5;
     -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
     box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
@@ -324,8 +324,8 @@ input.au-input.au-input-xl{
 }
 
 .menu-sidebar .logo{
-    background:#fff;
-    height:75px;
+    background:#FFCF96;
+    height:240px;
     padding:0 35px;
     display:-webkit-box;
     display:-webkit-flex;
@@ -566,7 +566,7 @@ input.au-input.au-input-xl{
  */
 
 .form-area{
-    background:#e5e5e5;
+    background:#D1F8EF;
     position:relative;
     margin-bottom:45px;
     padding:50px 20px;
@@ -628,7 +628,7 @@ input.au-input.au-input-xl{
     height:22px;
     width:22px;
     background-color:#fff!important;
-    border:2px solid #e5e5e5;
+    border:2px solid #D1F8EF;
     -webkit-border-radius:2px;
     -moz-border-radius:2px;
     border-radius:2px
@@ -664,7 +664,7 @@ label.date{
     -moz-transform:rotate(45deg);
     -ms-transform:rotate(45deg);
     -o-transform:rotate(45deg);
-    transform:rotate(45deg)
+    transform:rotate(45deg);
 }
 option:first{
     color:#ccc
@@ -687,7 +687,7 @@ table.table.table-bordered{
     background:#fff
 }
 .table-bordered td,.table-bordered th{
-    border:1px solid #dee2e6
+    border:1px solid #D1F8EF
 }
 table.table.table-bordered th{
     BACKGROUND:#0da8e4;
@@ -736,11 +736,18 @@ table.table.table-bordered th{
  * ----------------------------
  */
 
- .btn-info{
+.info{
     color:#fff;
-    background-color:#0da8e4!important;
-    border-color:#0da8e4!important
+    background-color:#A1E3F9 !important;
+    border-color:#A1E3F9 !important
 }
+.btn-primary {
+    background-color: #FF8080 !important;
+}
+.btn-primary:hover{
+    background-color: #578FCA !important;
+}
+
 a.primary-btn{
     background:#05143f;
     padding:7px 20px;
@@ -850,7 +857,7 @@ footer ul li{
         padding-left:0
     }
      .page-wrapper{
-        background:#e5e5e5;
+        background:#D1F8EF;
         padding-bottom:12vh
     }
      .main-content{

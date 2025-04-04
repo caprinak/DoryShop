@@ -1,15 +1,14 @@
-import { State } from "../common/state";
-import { Country } from "../common/country";
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-
+import { HttpClient } from "@angular/common/http";
+import { Country } from "../common/country";
 import { map } from "rxjs/operators";
+import { State } from "../common/state";
 
 @Injectable({
   providedIn: "root",
 })
-export class ThevortexFormService {
+export class DoryFormService {
   private countriesUrl = "http://localhost:8080/api/countries";
   private statesUrl = "http://localhost:8080/api/states";
 
@@ -20,11 +19,13 @@ export class ThevortexFormService {
       .get<GetResponseCountries>(this.countriesUrl)
       .pipe(map((response) => response._embedded.countries));
   }
-  getStates(countryCode: string): Observable<State[]> {
-    const searchStatesUrl =
-      "http://localhost:8080/api/states/search/findByCountryCode?code=";
+
+  getStates(theCountryCode: string): Observable<State[]> {
+    // search url
+    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
+
     return this.httpClient
-      .get<GetResponseStates>(searchStatesUrl + countryCode)
+      .get<GetResponseStates>(searchStatesUrl)
       .pipe(map((response) => response._embedded.states));
   }
 
@@ -57,11 +58,13 @@ export class ThevortexFormService {
     return of(data);
   }
 }
+
 interface GetResponseCountries {
   _embedded: {
     countries: Country[];
   };
 }
+
 interface GetResponseStates {
   _embedded: {
     states: State[];
