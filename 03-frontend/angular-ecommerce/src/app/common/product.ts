@@ -5,8 +5,12 @@ export class Product {
     description: string;
     unitPrice: number;
     imageUrl: string;
-    active: boolean;
+    active: boolean = true;
     unitsInStock: number;
     dateCreated: Date;
-    lastUpdate: Date;
+    lastUpdated: Date;
+    category?: {
+        id: number;
+        name: string;
+    };
 }

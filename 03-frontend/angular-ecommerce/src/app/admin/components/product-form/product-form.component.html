@@ -1,0 +1,142 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h2>{{ isEditMode ? 'Edit' : 'Add' }} Product</h2>
+          
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="form-area">
+            <!-- Image Upload Section -->
+            <div class="form-group">
+              <label>Product Image</label>
+              <div class="image-upload-container">
+                <div class="current-image" *ngIf="previewUrl || productForm.get('imageUrl').value">
+                  <img [src]="previewUrl || productForm.get('imageUrl').value" 
+                       alt="Product preview" 
+                       class="preview-image">
+                </div>
+                <div class="upload-controls">
+                  <input type="file" 
+                         #fileInput
+                         accept="image/*"
+                         class="file-input"
+                         (change)="onFileSelected($event)">
+                  <button type="button" 
+                          class="btn btn-outline-primary"
+                          (click)="fileInput.click()">
+                    <i class="fas fa-upload"></i> Choose Image
+                  </button>
+                  <div *ngIf="selectedFile" class="selected-file-name">
+                    {{ selectedFile.name }}
+                  </div>
+                </div>
+                <!-- <div *ngIf="isUploading" class="upload-progress">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Uploading...</span>
+                  </div>
+                  <span>Uploading image...</span>
+                </div> -->
+              </div>
+            </div>
+
+            <!-- Hidden Image URL field style="display: none;"-->
+            <div class="form-group" >
+              <div class="input-space">
+                <input type="text" 
+                       formControlName="imageUrl" 
+                       class="form-control" 
+                       readonly 
+                       [value]="previewUrl || productForm.get('imageUrl').value">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Product Name</label>
+              <div class="input-space">
+                <input type="text" id="name" formControlName="name" class="form-control">
+                <div *ngIf="productForm.get('name').invalid && productForm.get('name').touched" 
+                     class="alert alert-danger mt-1">
+                  <div *ngIf="productForm.get('name').errors?.required">Name is required</div>
+                  <div *ngIf="productForm.get('name').errors?.minlength">
+                    Name must be at least 2 characters
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <div class="input-space">
+                <textarea id="description" formControlName="description" class="form-control" rows="3"></textarea>
+                <div *ngIf="productForm.get('description').invalid && productForm.get('description').touched" class="alert alert-danger mt-1">
+                  Description is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="unitPrice">Price</label>
+              <div class="input-space">
+                <input type="number" id="unitPrice" formControlName="unitPrice" class="form-control" min="0" step="0.01">
+                <div *ngIf="productForm.get('unitPrice').invalid && productForm.get('unitPrice').touched" class="alert alert-danger mt-1">
+                  <div *ngIf="productForm.get('unitPrice').errors?.required">Price is required</div>
+                  <div *ngIf="productForm.get('unitPrice').errors?.min">Price must be greater than 0</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="unitsInStock">Units in Stock</label>
+              <div class="input-space">
+                <input type="number" id="unitsInStock" formControlName="unitsInStock" class="form-control" min="0">
+                <div *ngIf="productForm.get('unitsInStock').invalid && productForm.get('unitsInStock').touched" class="alert alert-danger mt-1">
+                  <div *ngIf="productForm.get('unitsInStock').errors?.required">Units in stock is required</div>
+                  <div *ngIf="productForm.get('unitsInStock').errors?.min">Units in stock must be greater than 0</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="categoryId">Category</label>
+              <div class="input-space">
+                <select id="categoryId" formControlName="categoryId" class="form-control">
+                  <option value="">Select a category</option>
+                  <option *ngFor="let category of categories" [value]="category.id">
+                    {{ category.categoryName }}
+                  </option>
+                </select>
+                <div *ngIf="productForm.get('categoryId').invalid && productForm.get('categoryId').touched" class="alert alert-danger mt-1">
+                  Category is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-space">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" id="active" formControlName="active" class="custom-control-input">
+                  <label class="custom-control-label" for="active">Active</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="button-group mt-4">
+              <button type="submit" 
+                      class="btn btn-primary mr-2" 
+                      [disabled]="productForm.invalid || isSubmitting || isLoading">
+                <span *ngIf="isSubmitting || isLoading" class="spinner-border spinner-border-sm mr-1" role="status" aria-hidden="true"></span>
+                {{ isSubmitting ? 'Saving...' : (isLoading ? 'Loading...' : (isEditMode ? 'Update' : 'Create')) }} Product
+              </button>
+              <button type="button" 
+                      class="btn btn-secondary" 
+                      (click)="onCancel()"
+                      [disabled]="isSubmitting || isLoading">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

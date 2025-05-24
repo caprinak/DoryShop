@@ -23,7 +23,12 @@
           <div class="header-wrap">
             <app-search></app-search>
 
-            <app-cart-status></app-cart-status>
+            <div class="header-buttons">
+              <a routerLink="/admin/products" class="btn btn-info mr-3">
+                <i class="fas fa-cog"></i> Manage Products
+              </a>
+              <app-cart-status></app-cart-status>
+            </div>
           </div>
           <div class="account-wrap"></div>
         </div>

@@ -1,0 +1,148 @@
+.product-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.table th {
+    background-color: #3674B5;
+}
+
+.btn-sm {
+    margin: 0 3px;
+}
+
+.btn-sm i {
+    margin-right: 5px;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.product-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.product-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.product-box h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-box .price {
+    color: #3674B5;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-box p {
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.button-group {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.page-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.add-product-btn {
+    margin-bottom: 30px;
+}
+
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.footer-pagination {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.form-control-sm {
+    height: calc(1.5em + 0.5rem + 2px);
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+.alert {
+    margin-top: 2rem;
+}
+
+/* New styles for category filter */
+.form-group label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-group select.form-control {
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 8px 12px;
+    font-size: 15px;
+    color: #333;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-group select.form-control:focus {
+    border-color: #3674B5;
+    box-shadow: 0 0 0 0.2rem rgba(54, 116, 181, 0.25);
+    outline: 0;
+}
+
+.spinner-border {
+    margin: 2rem auto;
+    color: #3674B5;
+}
