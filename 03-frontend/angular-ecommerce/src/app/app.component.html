@@ -17,24 +17,52 @@
 
   <div class="page-container">
     <!-- HEADER DESKTOP-->
-    <header class="header-desktop">
-      <div class="section-content section-content-p30">
-        <div class="container-fluid">
-          <div class="header-wrap">
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container-fluid">
+        <div class="d-flex flex-wrap align-items-center justify-content-between">
+          <!-- Search Component -->
+          <div class="col-12 col-lg-auto mb-3 mb-lg-0">
             <app-search></app-search>
+          </div>
 
-            <div class="header-buttons">
-              <a routerLink="/admin/products" class="btn btn-info mr-3">
+          <!-- Navigation -->
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center">
+            <li>
+              <a
+                routerLink="/admin/products"
+                class="nav-link px-2 link-body-emphasis"
+              >
                 <i class="fas fa-cog"></i> Manage Products
               </a>
-              <app-cart-status></app-cart-status>
+            </li>
+          </ul>
+
+          <!-- Cart and Account -->
+          <div class="d-flex align-items-center">
+            <app-cart-status class="me-3"></app-cart-status>
+
+            <div class="dropdown text-end">
+              <a
+                href="#"
+                class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user-circle fa-2x"></i>
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
             </div>
           </div>
-          <div class="account-wrap"></div>
         </div>
       </div>
     </header>
-    <!-- END HEADER DESKTOP-->
 
     <!-- MAIN CONTENT-->
     <router-outlet></router-outlet>

@@ -1,4 +1,59 @@
-/* 
+/* You can add global styles to this file, and also import other style files */
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Override Bootstrap defaults */
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+header {
+    background-color: #2a83db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+/* Common utilities */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Custom styles for the app */
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.page-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* Fix for Bootstrap dropdown menus */
+.dropdown-menu {
+    margin-top: 0.125rem;
+}
+
+/* Fix for Font Awesome icons */
+.fas {
+    vertical-align: middle;
+}
+
+/* /* 
  * ----------------------------
  * Common CSS
  * ----------------------------
@@ -133,17 +188,28 @@ aside.menu-sidebar.d-none.d-lg-block.clr{
  * ----------------------------
  */
 
-.header-desktop{
-    background:#3674B5;
-    -webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
-    -moz-box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
-    box-shadow:0 2px 5px 0 rgba(0,0,0,.1);
-    position:fixed;
-    top:0;
-    right:0;
-    left:200px;
-    height:75px;
-    z-index:3
+.header-desktop {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); /* Deeper blue gradient */
+    -webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 200px;
+    height: 90px;
+    z-index: 3;
+    padding: 0 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-desktop .container-fluid {
+    height: 100%;
+    padding: 0 40px; /* Increased padding */
+}
+
+.header-desktop .d-flex {
+    height: 100%;
 }
 
 .header-desktop .section-content{
@@ -223,11 +289,11 @@ input.au-input.au-input-xl{
 }
 
 .au-input{
-    line-height:43px;
+    line-height:50px; /* Increased from 43px */
     border:1px solid #e5e5e5;
-    font-size:14px;
+    font-size:16px; /* Increased from 14px */
     color:#666;
-    padding:0 17px;
+    padding:0 25px; /* Increased padding */
     -webkit-border-radius:3px;
     -moz-border-radius:3px;
     border-radius:3px;
@@ -242,28 +308,28 @@ input.au-input.au-input-xl{
 }
 
 .cart-area i{
-    font-size:22px;
+    font-size:24px; /* Increased from 22px */
     float:left;
-    margin-top:16px;
+    margin-top:20px; /* Adjusted for new height */
     color:#fff;
     margin-left:15px
 }
 
 .total{
     background:#205b8d;
-    line-height:43px;
+    line-height:50px; /* Increased from 43px */
     color:#fff;
     border-radius:30px;
     border:1px solid #0da8e4;
     float:left;
-    margin-top:7px;
-    padding-left:17px
+    margin-top:10px;
+    padding:0 20px; /* Increased padding */
 }
 
 .total span{
     display:inline-block;
     background:#fff;
-    padding:0 13px;
+    padding:0 15px; /* Increased padding */
     color:#000;
     border-top-right-radius:20px;
     border-bottom-right-radius:20px;
