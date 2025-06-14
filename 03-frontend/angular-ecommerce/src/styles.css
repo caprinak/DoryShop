@@ -39,7 +39,7 @@ header {
 
 .page-container {
     flex: 1;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: #f8f9fa;
 }
 
